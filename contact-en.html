@@ -47,12 +47,12 @@
             </div>
             <div class="card">
                 <h3>Contact Form</h3>
-                <form action="https://formsubmit.co/info@eurmsa.com" method="POST" class="contact-form">
-                    <!-- FormSubmit settings -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://eurmsa.com/thanks-en.html">
-                    <input type="hidden" name="_subject" value="New inquiry from EURM website contact form">
-                    <input type="hidden" name="_template" value="table">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <!-- Web3Forms settings -->
+                    <input type="hidden" name="access_key" value="7314591a-7e95-46c6-9ad9-9c41351f0a31">
+                    <input type="hidden" name="from_name" value="EURM Website - English Contact">
+                    <input type="hidden" name="subject" value="New inquiry from EURM website contact form">
+                    <input type="hidden" name="redirect" value="https://eurmsa.com/thanks-en.html">
 
                     <div class="form-group">
                         <label for="name-en">Full Name</label>
@@ -71,7 +71,7 @@
 
                     <div class="form-group">
                         <label for="subject-en">Subject</label>
-                        <input type="text" id="subject-en" name="subject" placeholder="e.g. International real estate partnership" required>
+                        <input type="text" id="subject-en" name="Message Subject" placeholder="e.g. International real estate partnership" required>
                     </div>
 
                     <div class="form-group">
