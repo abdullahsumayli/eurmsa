@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تواصل معنا | EURM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container navbar">
+        <div class="logo">
+            <div class="logo-mark">E</div>
+            <div class="logo-text">
+                <span>EURM</span>
+                <span>Elite Unity Real Marketing</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="markets.html">الأسواق</a></li>
+                <li><a href="contact.html" class="nav-cta">تواصل معنا</a></li>
+                <li><a href="contact-en.html" style="margin-right: 1rem; font-weight: bold;">English</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <h1 class="section-title">تواصل معنا</h1>
+        <p class="section-subtitle">إذا كنت مطورًا سعوديًا وترغب في فتح أسواق جديدة لمشاريعك خارج المملكة، يمكنك التواصل معنا</p>
+
+        <div class="cards cards-2">
+            <div class="card">
+                <h3>بيانات الاتصال</h3>
+                <p><strong>البريد الإلكتروني:</strong><br>
+                <a href="mailto:info@eurmsa.com">info@eurmsa.com</a></p>
+                <p><strong>الموقع:</strong><br>
+                <a href="https://eurmsa.com">eurmsa.com</a></p>
+                <p><strong>المدن:</strong><br>
+                الرياض – دبي</p>
+            </div>
+            <div class="card">
+                <h3>نموذج تواصل</h3>
+                <form class="form">
+                    <div class="field">
+                        <label for="name">الاسم الكامل</label>
+                        <input id="name" type="text" placeholder="اكتب اسمك هنا">
+                    </div>
+                    <div class="field">
+                        <label for="company">اسم الشركة</label>
+                        <input id="company" type="text" placeholder="اسم جهة التطوير">
+                    </div>
+                    <div class="field">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input id="email" type="email" placeholder="name@example.com">
+                    </div>
+                    <div class="field">
+                        <label for="message">نبذة عن المشروع</label>
+                        <textarea id="message" placeholder="اكتب باختصار نوع مشاريعك"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">إرسال</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © <span id="year"></span> EURM – Elite Unity Real Marketing | info@eurmsa.com
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
