@@ -165,10 +165,13 @@ nav a.active::after {
     font-weight: 600;
     cursor: pointer;
     transition: opacity 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-primary:hover {
     opacity: 0.9;
+    color: white;
 }
 
 .btn-secondary {
@@ -181,6 +184,8 @@ nav a.active::after {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-secondary:hover {
