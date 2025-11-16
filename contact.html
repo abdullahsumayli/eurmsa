@@ -47,24 +47,39 @@
             </div>
             <div class="card">
                 <h3>نموذج تواصل</h3>
-                <form class="form">
-                    <div class="field">
+                <form action="https://formsubmit.co/info@eurmsa.com" method="POST" class="contact-form">
+                    <!-- إعدادات FormSubmit -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://eurmsa.com/thanks.html">
+                    <input type="hidden" name="_subject" value="رسالة جديدة من نموذج التواصل في موقع EURM">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="form-group">
                         <label for="name">الاسم الكامل</label>
-                        <input id="name" type="text" placeholder="اكتب اسمك هنا">
+                        <input type="text" id="name" name="name" placeholder="اكتب اسمك هنا" required>
                     </div>
-                    <div class="field">
-                        <label for="company">اسم الشركة</label>
-                        <input id="company" type="text" placeholder="اسم جهة التطوير">
-                    </div>
-                    <div class="field">
+
+                    <div class="form-group">
                         <label for="email">البريد الإلكتروني</label>
-                        <input id="email" type="email" placeholder="name@example.com">
+                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
                     </div>
-                    <div class="field">
-                        <label for="message">نبذة عن المشروع</label>
-                        <textarea id="message" placeholder="اكتب باختصار نوع مشاريعك"></textarea>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الجوال (اختياري)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+9665XXXXXXXX">
                     </div>
-                    <button type="submit" class="btn-primary">إرسال</button>
+
+                    <div class="form-group">
+                        <label for="subject">موضوع الرسالة</label>
+                        <input type="text" id="subject" name="subject" placeholder="مثال: شراكة تطوير عقاري" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">نص الرسالة</label>
+                        <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك بالتفصيل" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
                 </form>
             </div>
         </div>
