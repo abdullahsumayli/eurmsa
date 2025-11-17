@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>حجز مساحة المعرض | EURM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-box {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.75rem;
+            color: #f97316;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .form-section-title {
+            font-size: 1.25rem;
+            color: #f97316;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #334155;
+        }
+
+        .form-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            color: #f9fafb;
+            font-family: "Tajawal", sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f97316;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            color: #f9fafb;
+            font-family: "Tajawal", sans-serif;
+        }
+
+        .form-group input[type="file"]::file-selector-button {
+            background-color: #334155;
+            color: #f9fafb;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+
+        .form-group input[type="file"]::file-selector-button:hover {
+            background-color: #475569;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .form-box {
+                padding: 1.5rem;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container navbar">
+        <div class="logo">
+            <div class="logo-mark">E</div>
+            <div class="logo-text">
+                <span>EURM</span>
+                <span>Elite Unity Real Marketing</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="markets.html">الأسواق</a></li>
+                <li><a href="expo-registration.html">حجز مساحة المعرض</a></li>
+                <li><a href="contact.html" class="nav-cta">تواصل معنا</a></li>
+                <li><a href="expo-registration-en.html" style="margin-right: 1rem; font-weight: bold;">English</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <h1 class="form-title">نموذج حجز مساحة – معرض دبي العقاري (نوفمبر)</h1>
+        
+        <div class="form-box">
+            <form class="form" method="POST" action="https://api.web3forms.com/submit" enctype="multipart/form-data">
+                <!-- Web3Forms Hidden Fields -->
+                <input type="hidden" name="access_key" value="7314591a-7e95-46c6-9ad9-9c41351f0a31">
+                <input type="hidden" name="email" value="info@eurmsa.com">
+                <input type="hidden" name="subject" value="طلب حجز مساحة – معرض دبي العقاري (نوفمبر)">
+                <input type="hidden" name="from_name" value="EURM Website - Expo Registration">
+                <input type="checkbox" name="botcheck" style="display:none;">
+
+                <!-- معلومات الشركة -->
+                <h3 class="form-section-title">معلومات الشركة</h3>
+                
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="company_name">اسم الشركة <span style="color: #f97316;">*</span></label>
+                        <input type="text" id="company_name" name="company_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="industry">النشاط <span style="color: #f97316;">*</span></label>
+                        <input type="text" id="industry" name="industry" placeholder="مطور – مسوّق – وسيط – مستثمر" required>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="country">الدولة <span style="color: #f97316;">*</span></label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">المدينة <span style="color: #f97316;">*</span></label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="company_website">موقع الشركة (اختياري)</label>
+                    <input type="text" id="company_website" name="company_website" placeholder="https://example.com">
+                </div>
+
+                <!-- معلومات الشخص المسؤول -->
+                <h3 class="form-section-title">معلومات الشخص المسؤول</h3>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="full_name">الاسم الكامل <span style="color: #f97316;">*</span></label>
+                        <input type="text" id="full_name" name="full_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job_title">المسمى الوظيفي <span style="color: #f97316;">*</span></label>
+                        <input type="text" id="job_title" name="job_title" required>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="phone">رقم الجوال مع مفتاح الدولة <span style="color: #f97316;">*</span></label>
+                        <input type="text" id="phone" name="phone" placeholder="+966XXXXXXXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني <span style="color: #f97316;">*</span></label>
+                        <input type="email" id="email" name="contact_email" required>
+                    </div>
+                </div>
+
+                <!-- تفاصيل المشاركة -->
+                <h3 class="form-section-title">تفاصيل المشاركة</h3>
+
+                <div class="form-group">
+                    <label for="participation_type">نوع المشاركة <span style="color: #f97316;">*</span></label>
+                    <select id="participation_type" name="participation_type" required>
+                        <option value="">اختر نوع المشاركة</option>
+                        <option value="جناح مستقل">جناح مستقل</option>
+                        <option value="جناح مشترك">جناح مشترك</option>
+                        <option value="حضور بدون جناح">حضور بدون جناح</option>
+                    </select>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="booth_size">مساحة الجناح المطلوبة</label>
+                        <select id="booth_size" name="booth_size">
+                            <option value="">اختر المساحة</option>
+                            <option value="3×3 متر">3×3 متر</option>
+                            <option value="3×6 متر">3×6 متر</option>
+                            <option value="6×6 متر">6×6 متر</option>
+                            <option value="مساحة مخصصة">مساحة مخصصة (يتم التنسيق لاحقًا)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staff_count">عدد الموظفين المشاركين</label>
+                        <input type="number" id="staff_count" name="staff_count" min="0" placeholder="مثال: 3">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="extra_needs">احتياجات إضافية</label>
+                    <textarea id="extra_needs" name="extra_needs" placeholder="شاشات – طاولات – مترجم – تجهيزات خاصة…"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="projects_overview">نبذة عن المشاريع التي سيتم عرضها</label>
+                    <textarea id="projects_overview" name="projects_overview" placeholder="نوع المشاريع / الفئات السعرية / المدن داخل السعودية…"></textarea>
+                </div>
+
+                <!-- ملف المشاريع -->
+                <h3 class="form-section-title">ملف المشاريع (اختياري)</h3>
+
+                <div class="form-group">
+                    <label for="project_file">رفع ملف المشاريع (PDF اختياري)</label>
+                    <input type="file" id="project_file" name="project_file" accept="application/pdf">
+                </div>
+
+                <!-- زر الإرسال -->
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">
+                    إرسال طلب حجز المساحة
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © <span id="year"></span> EURM – Elite Unity Real Marketing | info@eurmsa.com
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
