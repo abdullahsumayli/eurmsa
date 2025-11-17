@@ -175,20 +175,13 @@
 
                     <div class="form-group">
                         <label for="industry">Business Type <span style="color: #f97316;">*</span></label>
-                        <input type="text" id="industry" name="industry" placeholder="Developer – Marketer – Broker – Investor" required>
+                        <input type="text" id="industry" name="industry" placeholder="Developer – Marketer – Broker" required>
                     </div>
                 </div>
 
-                <div class="grid-2">
-                    <div class="form-group">
-                        <label for="country">Country <span style="color: #f97316;">*</span></label>
-                        <input type="text" id="country" name="country" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="city">City <span style="color: #f97316;">*</span></label>
-                        <input type="text" id="city" name="city" required>
-                    </div>
+                <div class="form-group">
+                    <label for="city">City <span style="color: #f97316;">*</span></label>
+                    <input type="text" id="city" name="city" required>
                 </div>
 
                 <div class="form-group">
@@ -236,27 +229,19 @@
                     </select>
                 </div>
 
-                <div class="grid-2">
-                    <div class="form-group">
-                        <label for="booth_size">Booth Size</label>
-                        <select id="booth_size" name="booth_size">
-                            <option value="">Select size</option>
-                            <option value="3×3 m">3×3 m</option>
-                            <option value="3×6 m">3×6 m</option>
-                            <option value="6×6 m">6×6 m</option>
-                            <option value="Custom Size">Custom Size (to be coordinated)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="staff_count">Number of Staff</label>
-                        <input type="number" id="staff_count" name="staff_count" min="0" placeholder="e.g., 3">
-                    </div>
+                <div class="form-group">
+                    <label for="booth_size">Booth Size</label>
+                    <input type="text" id="booth_size" name="booth_size" placeholder="e.g., 3×3 m or 6×6 m">
                 </div>
 
                 <div class="form-group">
                     <label for="extra_needs">Extra Needs</label>
-                    <textarea id="extra_needs" name="extra_needs" placeholder="Screens – Tables – Translator – Special equipment…"></textarea>
+                    <select id="extra_needs" name="extra_needs" multiple size="4">
+                        <option value="Booth Setup">Booth Setup</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Screens">Screens</option>
+                    </select>
+                    <small style="display: block; margin-top: 0.5rem; color: #94a3b8;">You can select multiple options (Hold Ctrl for multiple selection)</small>
                 </div>
 
                 <div class="form-group">

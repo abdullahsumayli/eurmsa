@@ -170,20 +170,13 @@
 
                     <div class="form-group">
                         <label for="industry">النشاط <span style="color: #f97316;">*</span></label>
-                        <input type="text" id="industry" name="industry" placeholder="مطور – مسوّق – وسيط – مستثمر" required>
+                        <input type="text" id="industry" name="industry" placeholder="مطور – مسوّق – وسيط" required>
                     </div>
                 </div>
 
-                <div class="grid-2">
-                    <div class="form-group">
-                        <label for="country">الدولة <span style="color: #f97316;">*</span></label>
-                        <input type="text" id="country" name="country" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="city">المدينة <span style="color: #f97316;">*</span></label>
-                        <input type="text" id="city" name="city" required>
-                    </div>
+                <div class="form-group">
+                    <label for="city">المدينة <span style="color: #f97316;">*</span></label>
+                    <input type="text" id="city" name="city" required>
                 </div>
 
                 <div class="form-group">
@@ -231,27 +224,19 @@
                     </select>
                 </div>
 
-                <div class="grid-2">
-                    <div class="form-group">
-                        <label for="booth_size">مساحة الجناح المطلوبة</label>
-                        <select id="booth_size" name="booth_size">
-                            <option value="">اختر المساحة</option>
-                            <option value="3×3 متر">3×3 متر</option>
-                            <option value="3×6 متر">3×6 متر</option>
-                            <option value="6×6 متر">6×6 متر</option>
-                            <option value="مساحة مخصصة">مساحة مخصصة (يتم التنسيق لاحقًا)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="staff_count">عدد الموظفين المشاركين</label>
-                        <input type="number" id="staff_count" name="staff_count" min="0" placeholder="مثال: 3">
-                    </div>
+                <div class="form-group">
+                    <label for="booth_size">مساحة الجناح المطلوبة</label>
+                    <input type="text" id="booth_size" name="booth_size" placeholder="مثال: 3×3 متر أو 6×6 متر">
                 </div>
 
                 <div class="form-group">
-                    <label for="extra_needs">احتياجات إضافية</label>
-                    <textarea id="extra_needs" name="extra_needs" placeholder="شاشات – طاولات – مترجم – تجهيزات خاصة…"></textarea>
+                    <label for="extra_needs">الاحتياجات الإضافية</label>
+                    <select id="extra_needs" name="extra_needs" multiple size="4">
+                        <option value="تجهيز البوث">تجهيز البوث</option>
+                        <option value="موظفين">موظفين</option>
+                        <option value="شاشات">شاشات</option>
+                    </select>
+                    <small style="display: block; margin-top: 0.5rem; color: #94a3b8;">يمكنك اختيار أكثر من خيار (اضغط Ctrl للاختيار المتعدد)</small>
                 </div>
 
                 <div class="form-group">
