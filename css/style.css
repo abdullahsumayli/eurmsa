@@ -95,171 +95,6 @@ header {
     white-space: nowrap;
 }
 
-/* Mobile Menu Toggle Button (Hamburger) - Hidden by default */
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 0.35rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
-}
-
-.mobile-menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-primary);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.mobile-menu-toggle:hover span {
-    background-color: #f97316;
-}
-
-/* Mobile Sidebar - Hidden by default */
-.mobile-sidebar {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background-color: var(--bg-secondary);
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 1100;
-    transition: right 0.3s ease-in-out;
-    overflow-y: auto;
-    pointer-events: auto;
-}
-
-.mobile-sidebar.active {
-    right: 0;
-    pointer-events: auto;
-}
-
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1050;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    pointer-events: none;
-}
-
-.sidebar-overlay.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.sidebar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.sidebar-logo {
-    height: 2.5rem;
-    width: auto;
-}
-
-.sidebar-close {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    color: var(--text-primary);
-    transition: color 0.3s;
-}
-
-.sidebar-close:hover {
-    color: #f97316;
-}
-
-.sidebar-nav {
-    padding: 1rem 0;
-}
-
-.sidebar-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar-nav li {
-    margin: 0;
-}
-
-.sidebar-nav a {
-    display: block;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: all 0.3s;
-    border-right: 3px solid transparent;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-    pointer-events: auto;
-    text-decoration: none;
-}
-
-.sidebar-nav a:hover {
-    background-color: var(--bg-card);
-    color: #f97316;
-    border-right-color: #f97316;
-}
-
-.sidebar-nav a.nav-cta {
-    color: #f97316;
-    font-weight: 700;
-}
-
-.sidebar-nav a.lang-switch {
-    font-weight: 700;
-    border-top: 1px solid var(--border-color);
-    margin-top: 0.5rem;
-}
-
-.theme-toggle-item {
-    border-top: 1px solid var(--border-color);
-    margin-top: 0.5rem;
-    padding: 0.5rem 1.5rem;
-}
-
-.theme-toggle-item .theme-toggle {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    background-color: var(--bg-card);
-}
-
-.theme-toggle-item .theme-toggle span {
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-/* Desktop Navigation */
-.desktop-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    align-items: center;
-}
-
 nav ul {
     display: flex;
     list-style: none;
@@ -772,27 +607,44 @@ footer {
 
 /* Tablet devices (768px and below) */
 @media (max-width: 768px) {
-    /* Show Mobile Menu Toggle, Hide Desktop Nav */
-    .mobile-menu-toggle {
-        display: flex;
-    }
-
-    .desktop-nav {
-        display: none;
-    }
-
     /* Navigation - Mobile Menu */
     .navbar {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         padding: 1rem 0;
-        justify-content: space-between;
     }
 
     .logo-img {
         height: 2.5rem;
     }
 
-    /* Remove old nav styles that are no longer needed */
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.75rem;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: var(--bg-card);
+    }
+
+    .theme-toggle {
+        margin: 0.5rem auto;
+    }
 
     /* Hero Section */
     .hero h1 {
