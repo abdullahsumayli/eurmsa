@@ -20,37 +20,42 @@ document.addEventListener('DOMContentLoaded', function() {
     function openSidebar() {
         mobileSidebar.classList.add('active');
         overlay.classList.add('active');
-        body.style.overflow = 'hidden'; // Prevent body scroll when sidebar is open
+        body.style.overflow = 'hidden';
     }
 
     // Function to close sidebar
     function closeSidebar() {
         mobileSidebar.classList.remove('active');
         overlay.classList.remove('active');
-        body.style.overflow = ''; // Restore body scroll
+        body.style.overflow = '';
     }
 
     // Open sidebar when hamburger button is clicked
     if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', openSidebar);
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openSidebar();
+        });
     }
 
     // Close sidebar when close button is clicked
     if (sidebarClose) {
-        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeSidebar();
+        });
     }
 
     // Close sidebar when overlay is clicked
-    overlay.addEventListener('click', closeSidebar);
-
-    // Close sidebar when a navigation link is clicked (allow navigation to happen)
-    const sidebarLinks = mobileSidebar.querySelectorAll('.sidebar-nav a');
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            // Just close the sidebar, don't prevent the link from working
-            setTimeout(closeSidebar, 100);
-        });
+    overlay.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeSidebar();
     });
+
+    // Don't add any click handlers to navigation links - let them work naturally!
+    // Navigation links will work on their own
 
     // Close sidebar on window resize if screen becomes larger
     window.addEventListener('resize', function() {
@@ -62,7 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle theme toggle in sidebar
     const themeToggleMobile = document.getElementById('theme-toggle-mobile');
     if (themeToggleMobile) {
-        themeToggleMobile.addEventListener('click', function() {
+        themeToggleMobile.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             const html = document.documentElement;
             const theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', theme);

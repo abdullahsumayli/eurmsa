@@ -131,10 +131,12 @@ header {
     z-index: 1100;
     transition: right 0.3s ease-in-out;
     overflow-y: auto;
+    pointer-events: auto;
 }
 
 .mobile-sidebar.active {
     right: 0;
+    pointer-events: auto;
 }
 
 .sidebar-overlay {
@@ -210,6 +212,8 @@ header {
     position: relative;
     z-index: 1;
     cursor: pointer;
+    pointer-events: auto;
+    text-decoration: none;
 }
 
 .sidebar-nav a:hover {
