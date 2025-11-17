@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
 
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,9 +36,10 @@ body {
     font-family: "Tajawal", sans-serif;
     direction: rtl;
     text-align: right;
-    background-color: #0f172a;
-    color: #f1f5f9;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -32,8 +55,8 @@ a {
 }
 
 header {
-    background-color: #1e293b;
-    border-bottom: 1px solid #334155;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -66,7 +89,7 @@ header {
 
 .logo-text span {
     font-size: 0.75rem;
-    color: #94a3b8;
+    color: var(--text-muted);
     letter-spacing: 0.05em;
     white-space: nowrap;
 }
@@ -87,6 +110,45 @@ nav a {
 
 nav a:hover {
     color: #f97316;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+    background: var(--bg-card);
+    border-color: #f97316;
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+html[data-theme="dark"] .sun-icon {
+    display: block;
+}
+
+html[data-theme="dark"] .moon-icon {
+    display: none;
+}
+
+html[data-theme="light"] .sun-icon {
+    display: none;
+}
+
+html[data-theme="light"] .moon-icon {
+    display: block;
 }
 
 nav a.active::after {
@@ -113,7 +175,7 @@ nav a.active::after {
 }
 
 .hero {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
     padding: 4rem 0;
     text-align: center;
 }
@@ -122,7 +184,7 @@ nav a.active::after {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     line-height: 1.2;
-    color: #f1f5f9;
+    color: var(--text-primary);
 }
 
 .hero h1 span {
@@ -131,7 +193,7 @@ nav a.active::after {
 
 .hero p {
     font-size: 1.1rem;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     margin-bottom: 2rem;
     max-width: 600px;
     margin-right: auto;
@@ -196,7 +258,7 @@ section {
 
 .section-subtitle {
     font-size: 1.05rem;
-    color: #94a3b8;
+    color: var(--text-muted);
     margin-bottom: 2rem;
     max-width: 800px;
 }
@@ -216,12 +278,12 @@ section {
 }
 
 .card {
-    background-color: #1e293b;
-    border: 1px solid #334155;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
     padding: 2rem;
     transition: all 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
 .card:hover {
@@ -238,7 +300,7 @@ section {
 }
 
 .card p {
-    color: #cbd5e1;
+    color: var(--text-secondary);
     line-height: 1.7;
 }
 
@@ -248,7 +310,7 @@ section {
 }
 
 .card li {
-    color: #cbd5e1;
+    color: var(--text-secondary);
     margin-bottom: 0.75rem;
     padding-right: 1.5rem;
     position: relative;
@@ -287,16 +349,16 @@ section {
 .field label {
     font-weight: 600;
     font-size: 0.95rem;
-    color: #f1f5f9;
+    color: var(--text-primary);
 }
 
 .field input,
 .field textarea {
-    background-color: #0f172a;
-    border: 1px solid #334155;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
     border-radius: 0.375rem;
     padding: 0.75rem;
-    color: #f1f5f9;
+    color: var(--text-primary);
     font-family: "Tajawal", sans-serif;
     font-size: 1rem;
     transition: border-color 0.3s;
@@ -320,11 +382,11 @@ section {
 
 footer {
     background-color: #020617;
-    border-top: 1px solid #334155;
+    border-top: 1px solid var(--border-color);
     padding: 2rem 0;
     margin-top: 3rem;
     text-align: center;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     font-size: 0.9rem;
 }
 
@@ -501,7 +563,7 @@ footer {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    border: 1px solid #334155;
+    border: 1px solid var(--border-color);
     text-align: center;
 }
 
@@ -516,7 +578,7 @@ footer {
     margin-bottom: 1rem;
     font-size: 1.1rem;
     line-height: 1.9;
-    color: #cbd5e1;
+    color: var(--text-secondary);
 }
 
 .thankyou-card .btn.btn-primary {
