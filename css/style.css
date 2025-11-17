@@ -599,3 +599,343 @@ footer {
     box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
     background: linear-gradient(135deg, #ea580c, #f97316);
 }
+
+/* ============================================
+   MOBILE RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet devices (768px and below) */
+@media (max-width: 768px) {
+    /* Navigation - Mobile Menu */
+    .navbar {
+        flex-wrap: wrap;
+        padding: 1rem 0;
+    }
+
+    .logo-img {
+        height: 2.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.75rem;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: var(--bg-card);
+    }
+
+    .theme-toggle {
+        margin: 0.5rem auto;
+    }
+
+    /* Hero Section */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* About Cards */
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Grid */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Section Titles */
+    .section h2 {
+        font-size: 1.75rem;
+    }
+
+    /* Cards */
+    .card {
+        padding: 1.5rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        text-align: center;
+    }
+
+    .footer-section ul {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Thank You Card */
+    .thankyou-card {
+        padding: 3rem 1.5rem;
+    }
+
+    .thankyou-card h1 {
+        font-size: 1.75rem;
+    }
+
+    .thankyou-card p {
+        font-size: 1rem;
+    }
+
+    /* Forms */
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    /* Container */
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    /* Logo */
+    .logo {
+        gap: 0.5rem;
+    }
+
+    .logo-img {
+        height: 2rem;
+    }
+
+    .logo-text h1 {
+        font-size: 1rem;
+    }
+
+    .logo-text span {
+        font-size: 0.65rem;
+    }
+
+    /* Navigation */
+    nav ul {
+        gap: 0.25rem;
+    }
+
+    nav ul li a {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Section */
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Stats */
+    .stat h3 {
+        font-size: 1.75rem;
+    }
+
+    .stat p {
+        font-size: 0.9rem;
+    }
+
+    /* Service Card */
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    /* About Card */
+    .about-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .about-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Contact Info */
+    .contact-info {
+        padding: 1.5rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.25rem;
+    }
+
+    .contact-info p, .contact-info a {
+        font-size: 0.9rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: 1.5rem 1rem;
+    }
+
+    .contact-form h2 {
+        font-size: 1.25rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-form .btn.btn-primary {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Thank You Card */
+    .thankyou-card {
+        padding: 2rem 1rem;
+        border-radius: 15px;
+    }
+
+    .thankyou-card h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .thankyou-card p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .thankyou-card .btn.btn-primary {
+        padding: 0.85rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.85rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding: 1rem 0;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+        padding: 8px;
+    }
+
+    .theme-toggle svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.25rem;
+    }
+
+    .section h2 {
+        font-size: 1.25rem;
+    }
+
+    .btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.85rem;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    nav ul li {
+        width: auto;
+    }
+}
