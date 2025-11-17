@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarClose = document.getElementById('sidebar-close');
     const body = document.body;
 
+    // Check if elements exist
+    if (!mobileSidebar) {
+        console.error('Mobile sidebar not found!');
+        return;
+    }
+
     // Create overlay element
     const overlay = document.createElement('div');
     overlay.className = 'sidebar-overlay';
@@ -37,10 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close sidebar when overlay is clicked
     overlay.addEventListener('click', closeSidebar);
 
-    // Close sidebar when a navigation link is clicked
+    // Close sidebar when a navigation link is clicked (allow navigation to happen)
     const sidebarLinks = mobileSidebar.querySelectorAll('.sidebar-nav a');
     sidebarLinks.forEach(link => {
-        link.addEventListener('click', closeSidebar);
+        link.addEventListener('click', function() {
+            // Just close the sidebar, don't prevent the link from working
+            setTimeout(closeSidebar, 100);
+        });
     });
 
     // Close sidebar on window resize if screen becomes larger
