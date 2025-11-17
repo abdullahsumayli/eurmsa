@@ -50,28 +50,13 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
-.logo-mark {
-    width: 3rem;
+.logo-img {
     height: 3rem;
-    background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%);
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: white;
-    position: relative;
-    box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
-}
-
-.logo-mark::before {
-    content: 'E';
-    font-family: Georgia, serif;
-    letter-spacing: 0.05em;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-text {
@@ -79,18 +64,11 @@ header {
     flex-direction: column;
 }
 
-.logo-text span:first-child {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #c9a961;
-    letter-spacing: 0.1em;
-    font-family: Georgia, serif;
-}
-
-.logo-text span:last-child {
-    font-size: 0.7rem;
+.logo-text span {
+    font-size: 0.75rem;
     color: #6b6b6b;
     letter-spacing: 0.05em;
+    white-space: nowrap;
 }
 
 nav ul {
