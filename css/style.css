@@ -54,16 +54,24 @@ header {
 }
 
 .logo-mark {
-    width: 2.5rem;
-    height: 2.5rem;
-    background: linear-gradient(135deg, #c9a961, #b8935a);
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%);
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: white;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+}
+
+.logo-mark::before {
+    content: 'E';
+    font-family: Georgia, serif;
+    letter-spacing: 0.05em;
 }
 
 .logo-text {
@@ -73,12 +81,14 @@ header {
 
 .logo-text span:first-child {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #c9a961;
+    letter-spacing: 0.1em;
+    font-family: Georgia, serif;
 }
 
 .logo-text span:last-child {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     color: #6b6b6b;
     letter-spacing: 0.05em;
 }
