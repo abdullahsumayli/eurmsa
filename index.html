@@ -1,99 +1,1077 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <title>EURM | International Real Estate Marketing</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="images/logo-eurm.png">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>EURM – International Real Estate Marketing Partner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="images/logo-eurm.png">
+  <meta name="description"
+        content="EURM is a Saudi-based specialised real estate marketing agency connecting Saudi and regional developers with global investors through exhibitions, campaigns, and deal facilitation." />
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --bg-soft: #ffffff;
+      --border: #e5e7eb;
+      --navy: #0f172a;
+      --navy-soft: #111827;
+      --primary: #f97316;
+      --primary-soft: rgba(249, 115, 22, 0.08);
+      --primary-border: rgba(249, 115, 22, 0.4);
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.08);
+      --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --max-width: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #e5e7eb 0, #f3f4f6 40%, #e5e7eb 100%);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px 18px 50px;
+    }
+
+    /* NAVBAR */
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 4px 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 150deg,
+        #f97316,
+        #facc15,
+        #0ea5e9,
+        #6366f1,
+        #f97316
+      );
+      padding: 2px;
+      box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.5);
+    }
+
+    .brand-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy-soft);
+    }
+
+    .brand-tag {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy-soft);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #f97316, #facc15);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-small {
+      border-radius: 999px;
+      padding: 7px 14px;
+      border: 1px solid var(--primary-border);
+      background: #ffffff;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-small span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 30px;
+      padding: 16px 0 32px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.0rem, 3vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--navy-soft);
+    }
+
+    .hero-highlight {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-muted);
+    }
+
+    .badge strong {
+      color: var(--navy-soft);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 11px 22px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(135deg, #f97316, #facc15);
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.03);
+    }
+
+    .btn-outline {
+      border-radius: 999px;
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--navy-soft);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note strong {
+      color: var(--navy-soft);
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      color: var(--navy-soft);
+    }
+
+    .hero-chip {
+      font-size: 0.7rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .metric {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 9px 9px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .metric-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .metric-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy-soft);
+    }
+
+    .metric-kicker {
+      font-size: 0.72rem;
+      color: var(--primary);
+    }
+
+    .pipeline {
+      border-radius: 14px;
+      background: #f9fafb;
+      border: 1px dashed var(--border);
+      padding: 9px 10px 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .pipeline strong {
+      color: var(--navy-soft);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 28px 0 10px;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy-soft);
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 460px;
+    }
+
+    .section-grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .card-text {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .card-text p + p {
+      margin-top: 8px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .step {
+      background: var(--bg-soft);
+      border-radius: var(--radius-md);
+      padding: 11px 11px 9px;
+      border: 1px solid var(--border);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .step-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .step-number {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    .step-title {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--navy-soft);
+    }
+
+    /* SERVICES GRID */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .service-card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .service-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+      color: var(--navy-soft);
+    }
+
+    .service-card ul {
+      list-style: none;
+      margin-top: 6px;
+    }
+
+    .service-card li {
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .service-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .service-tag {
+      font-size: 0.75rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    /* WHY + CLIENTS */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .why-card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-md);
+      padding: 11px 11px 9px;
+      border: 1px solid var(--border);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .why-card h3 {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      color: var(--navy-soft);
+    }
+
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .metric-pill {
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .metric-pill span.label {
+      color: var(--text-muted);
+    }
+
+    .metric-pill span.value {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .client-type {
+      background: var(--bg-soft);
+      border-radius: var(--radius-md);
+      padding: 10px 10px 8px;
+      border: 1px solid var(--border);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .client-type h3 {
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+      color: var(--navy-soft);
+    }
+
+    /* CONTACT / FOOTER */
+
+    .contact-section {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px 16px;
+      margin-top: 18px;
+    }
+
+    .contact-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .contact-top h2 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+      color: var(--navy-soft);
+    }
+
+    .contact-top p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 0.86rem;
+      margin-top: 6px;
+    }
+
+    .contact-item span.label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .contact-item a,
+    .contact-item span.value {
+      word-break: break-word;
+      color: var(--navy-soft);
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      max-height: 260px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-image {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      max-height: 260px;
+      margin-bottom: 14px;
+      display: block;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    }
+
+    footer {
+      padding-top: 16px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-top: 1px solid #d1d5db;
+      margin-top: 26px;
+    }
+
+    footer span:last-child {
+      text-align: right;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .section-grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .why-grid,
+      .metrics-strip,
+      .clients-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .contact-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <div class="container navbar">
-        <div class="logo">
-            <img src="images/logo-eurm.png" alt="EURM Logo" class="logo-img">
-            <div class="logo-text">
-                <span>Elite Unity Real Marketing</span>
-            </div>
+  <div class="page">
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="brand">
+        <div class="brand-mark">
+          <div class="brand-inner">EU</div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="expo-registration.html" class="nav-cta">Book Exhibition Space</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="container">
-        <h1>A Saudi Company Specialized in <span>International Real Estate Marketing</span></h1>
-        <p>Connecting Saudi Developers with Global Investors and Opportunities</p>
-        <div class="hero-buttons">
-            <a href="services.html" class="btn-primary">Explore Our Services</a>
-            <a href="contact.html" class="btn-secondary">Contact Us</a>
+        <div class="brand-text">
+          <span class="brand-name">EURM</span>
+          <span class="brand-tag">Elite Unity Real Marketing</span>
         </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2 class="section-title">Our Main Services</h2>
-        <div class="cards cards-3">
-            <div class="card">
-                <h3>International Exhibitions</h3>
-                <p>Effective organization and participation in international real estate and investment exhibitions</p>
-            </div>
-            <div class="card">
-                <h3>Global Promotion</h3>
-                <p>Strong marketing of your projects in Arab and global markets</p>
-            </div>
-            <div class="card">
-                <h3>Lead Generation</h3>
-                <p>Direct search and communication with qualified investors</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        © <span id="year"></span> EURM – Elite Unity Real Marketing | 
-        <a href="mailto:info@eurmsa.com">info@eurmsa.com</a> | 
-        <a href="https://x.com/eurm_sa" target="_blank" rel="noopener noreferrer" title="Follow us on X">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
+      </div>
+      <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#how">Process</a>
+        <a href="#why">Why EURM</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="expo-registration.html" class="btn-small">
+          <span class="dot"></span>
+          Book Exhibition Space
         </a>
-    </div>
-</footer>
+      </div>
+    </header>
 
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<script src="js/theme.js"></script>
-<script src="js/header.js"></script>
+    <!-- HERO -->
+    <main id="hero" class="hero">
+      <section>
+        <div class="hero-kicker">International Real Estate Marketing Partner</div>
+        <h1 class="hero-title">
+          A Saudi agency specialised in
+          <span class="hero-highlight">connecting developers with global capital.</span>
+        </h1>
+        <p class="hero-subtitle">
+          EURM is a Saudi-based specialised real estate marketing agency focused exclusively on
+          connecting Saudi and regional property developers with international markets through
+          strategic exhibitions, targeted campaigns, and investor engagement.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge"><strong>100% Real Estate</strong> focus</span>
+          <span class="badge">International exhibitions &amp; events</span>
+          <span class="badge">Qualified global investor pipeline</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="contact.html" class="btn-primary">Contact Us</a>
+          <a href="#services" class="btn-outline">Explore Our Services</a>
+        </div>
+        <p class="hero-note">
+          From visibility and lead generation to investor engagement and deal execution,
+          <strong>EURM operates as your strategic partner, not a generic service vendor.</strong>
+        </p>
+      </section>
+
+      <aside class="hero-card">
+        <img src="images/hero-global-exhibition.jpg.png"
+             alt="International real estate exhibition and global investors"
+             class="hero-image">
+        <div class="hero-card-title">
+          <span>International Investor Pipeline</span>
+          <span class="hero-chip">Exhibitions • Campaigns • Deals</span>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <div class="metric-label">Sector Focus</div>
+            <div class="metric-value">100%</div>
+            <div class="metric-kicker">Real Estate</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Service Model</div>
+            <div class="metric-value">360°</div>
+            <div class="metric-kicker">End-to-End</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Market Reach</div>
+            <div class="metric-value">Global</div>
+            <div class="metric-kicker">Investors</div>
+          </div>
+        </div>
+        <div class="pipeline">
+          <strong>How we work:</strong> we identify the right exhibitions, position your projects,
+          build a qualified international investor pipeline, and support the transaction process
+          from first meeting to post-deal relationship management.
+        </div>
+      </aside>
+    </main>
+
+    <!-- WHO WE ARE & HOW WE WORK -->
+    <section id="how">
+      <div class="section-label">About Eurm</div>
+      <div class="section-header">
+        <h2 class="section-title">Who we are &amp; how we work</h2>
+        <p class="section-sub">
+          EURM manages the full journey from visibility and lead generation to investor engagement
+          and deal support, acting as a strategic partner for ambitious developers and investors.
+        </p>
+      </div>
+
+      <div class="section-grid-2">
+        <div class="card-text">
+          <p>
+            EURM is a Saudi-based specialised real estate marketing agency focused exclusively on
+            connecting Saudi and regional property developers with international markets. We
+            combine deep knowledge of real estate projects, investor expectations, and global
+            exhibition platforms to position our clients in front of serious buyers and
+            institutional investors.
+          </p>
+          <p>
+            Acting as a strategic partner rather than a generic service provider, EURM manages
+            the full journey from visibility and lead generation to investor engagement and deal
+            support.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-head">
+              <div class="step-number">01</div>
+              <div class="step-title">Strategic Discovery</div>
+            </div>
+            <p>
+              We start by understanding each client's portfolio, target markets, and investment
+              goals to create a tailored approach.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-head">
+              <div class="step-number">02</div>
+              <div class="step-title">Market Positioning</div>
+            </div>
+            <p>
+              EURM selects the right international exhibitions and designs focused marketing
+              campaigns aligned with your objectives.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-head">
+              <div class="step-number">03</div>
+              <div class="step-title">Investor Pipeline Development</div>
+            </div>
+            <p>
+              We build and manage a targeted pipeline of qualified international investors
+              matched to your projects.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-head">
+              <div class="step-number">04</div>
+              <div class="step-title">Execution &amp; Follow-Through</div>
+            </div>
+            <p>
+              We coordinate logistics, messaging, and follow-up to ensure every activity delivers
+              qualified leads and measurable investment outcomes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE SERVICES -->
+    <section id="services">
+      <div class="section-label">Core Services</div>
+      <div class="section-header">
+        <h2 class="section-title">Three integrated pillars to maximise your global reach</h2>
+        <p class="section-sub">
+          EURM delivers three integrated service pillars designed to maximise your international
+          market presence and attract qualified investment capital.
+        </p>
+      </div>
+
+      <img src="images/strategy-market-analytics.jpg.png"
+           alt="International real estate strategy and analytics"
+           class="section-image">
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <article class="service-card">
+          <div class="service-tag">Exhibitions &amp; Events</div>
+          <h3>International Exhibition &amp; Event Management</h3>
+          <p>
+            EURM manages the full lifecycle of your participation in major international real
+            estate exhibitions and industry events, from strategy to execution.
+          </p>
+          <ul>
+            <li>Strategic show identification and selection</li>
+            <li>Booth space acquisition and negotiation</li>
+            <li>Stand design coordination and messaging</li>
+            <li>On-site operations management</li>
+            <li>Post-event follow-up and lead qualification</li>
+          </ul>
+          <p style="margin-top: 6px;">
+            Every event is optimised to deliver qualified leads, strategic relationships, and
+            tangible business opportunities.
+          </p>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="service-card">
+          <div class="service-tag">Campaigns</div>
+          <h3>Marketing Campaign Management for Real Estate Projects</h3>
+          <p><strong>Strategic Positioning</strong></p>
+          <p>
+            Market analysis and competitive positioning tailored to your projects and target
+            audience.
+          </p>
+          <p style="margin-top: 4px;"><strong>Integrated Campaigns</strong></p>
+          <p>
+            Digital and social media promotion with compelling content development and investor
+            presentation materials.
+          </p>
+          <p style="margin-top: 4px;"><strong>Performance Tracking</strong></p>
+          <p>
+            Campaign metrics and ROI analysis to optimise results and demonstrate clear
+            commercial value.
+          </p>
+          <p style="margin-top: 6px;">
+            Every campaign is built around clear commercial objectives—whether project launches,
+            sales acceleration, or investor outreach.
+          </p>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="service-card">
+          <div class="service-tag">Deals &amp; Capital</div>
+          <h3>Real Estate Deal Management &amp; Foreign Investor Attraction</h3>
+          <p>
+            EURM bridges the gap between exceptional property opportunities and international
+            investors seeking quality assets.
+          </p>
+          <ul>
+            <li>Structured investor prospect pipeline management</li>
+            <li>Coordinated introductions and presentations</li>
+            <li>Transaction process support</li>
+            <li>Collaboration with legal, financial, and advisory partners</li>
+            <li>Post-transaction relationship management</li>
+          </ul>
+          <p style="margin-top: 6px;">
+            Our approach ensures investors receive complete information whilst developers benefit
+            from qualified, serious capital partners.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHY & CLIENTS -->
+    <section id="why">
+      <div class="section-label">Why Eurm</div>
+      <div class="section-header">
+        <h2 class="section-title">Why leading developers partner with EURM</h2>
+        <p class="section-sub">
+          This specialisation allows EURM to understand project fundamentals, deliver strategic
+          insights, and create measurable commercial outcomes that general marketing agencies
+          simply cannot match.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>Real Estate Specialisation</h3>
+          <p>
+            Unlike general agencies, we focus exclusively on real estate and international
+            investment markets, making every activity aligned with sector realities.
+          </p>
+        </div>
+        <div class="why-card">
+          <h3>Global Market Expertise</h3>
+          <p>
+            Deep understanding of exhibition dynamics, investor expectations, and cross-border
+            transaction requirements across multiple markets.
+          </p>
+        </div>
+        <div class="why-card">
+          <h3>End-to-End Support</h3>
+          <p>
+            From visibility and lead generation to investor engagement and deal execution—EURM is
+            with you throughout the full investment cycle.
+          </p>
+        </div>
+      </div>
+
+      <div class="metrics-strip">
+        <div class="metric-pill">
+          <span class="label">Sector focus</span>
+          <span class="value">100% Real Estate</span>
+        </div>
+        <div class="metric-pill">
+          <span class="label">Service coverage</span>
+          <span class="value">360° Comprehensive</span>
+        </div>
+        <div class="metric-pill">
+          <span class="label">Market reach</span>
+          <span class="value">Global Capital</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <div class="section-label">Clients We Serve</div>
+        <div class="section-header" style="margin-bottom: 10px;">
+          <h2 class="section-title">Ambitious partners with international goals</h2>
+        </div>
+
+        <img src="images/global-real-estate-network.jpg.png"
+             alt="Global real estate network and international markets"
+             class="section-image">
+
+        <div class="clients-grid">
+          <div class="client-type">
+            <h3>Real Estate Developers</h3>
+            <p>Developers seeking international project visibility and sales.</p>
+          </div>
+          <div class="client-type">
+            <h3>Property Companies</h3>
+            <p>Companies expanding into new geographic markets.</p>
+          </div>
+          <div class="client-type">
+            <h3>Investment Firms</h3>
+            <p>Firms attracting foreign capital for real estate portfolios.</p>
+          </div>
+          <div class="client-type">
+            <h3>Real Estate Platforms</h3>
+            <p>Platforms requiring strategic marketing and investor connections.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label">Get In Touch</div>
+      <div class="contact-section">
+        <div class="contact-top">
+          <div>
+            <h2>Connect your projects with global investors</h2>
+            <p>
+              EURM is ready to support your next exhibition, campaign, or investment mandate.
+              Share your portfolio and objectives, and we will design a tailored international
+              marketing plan.
+            </p>
+          </div>
+          <div>
+            <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="label">Website</span>
+            <a href="https://www.eurmsa.com" target="_blank" rel="noreferrer">
+              www.eurmsa.com
+            </a>
+          </div>
+          <div class="contact-item">
+            <span class="label">Email</span>
+            <a href="mailto:info@eurmsa.com">info@eurmsa.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="label">Phone</span>
+            <span class="value">+966 539 620 402</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">Address</span>
+            <span class="value">Alnarjis, Riyadh, Saudi Arabia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© EURM – Elite Unity Real Marketing. All rights reserved.</span>
+      <span>International real estate marketing partner.</span>
+    </footer>
+  </div>
 </body>
 </html>
