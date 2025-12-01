@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <title>حجز مساحة المعرض | EURM</title>
+    <title>Book Exhibition Space | EURM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="images/logo-eurm.png">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body[dir="ltr"] {
+            direction: ltr;
+            text-align: left;
+        }
+
         .form-box {
             background-color: #ffffff;
             border: 1px solid #d4c5a9;
@@ -100,7 +105,7 @@
             padding: 0.5rem 1rem;
             border-radius: 0.375rem;
             cursor: pointer;
-            margin-left: 1rem;
+            margin-right: 1rem;
         }
 
         .form-group input[type="file"]::file-selector-button:hover {
@@ -122,7 +127,7 @@
         }
     </style>
 </head>
-<body>
+<body dir="ltr">
 
 <header>
     <div class="container navbar">
@@ -134,14 +139,13 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about.html">من نحن</a></li>
-                <li><a href="services.html">الخدمات</a></li>
-                <li><a href="expo-registration.html" class="nav-cta">حجز مساحة المعرض</a></li>
-                <li><a href="contact.html">تواصل معنا</a></li>
-                <li><a href="expo-registration-en.html" style="margin-right: 1rem; font-weight: bold;">English</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="expo-registration.html" class="nav-cta">Book Exhibition Space</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="تبديل الوضع">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                         <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -165,103 +169,103 @@
 
 <section>
     <div class="container">
-        <h1 class="form-title">نموذج حجز مساحة – معرض دبي العقاري</h1>
+        <h1 class="form-title">Dubai Real Estate Expo – Booth Registration</h1>
         
         <div class="form-box">
             <form class="form" method="POST" action="https://api.web3forms.com/submit" enctype="multipart/form-data">
                 <!-- Web3Forms Hidden Fields -->
                 <input type="hidden" name="access_key" value="7314591a-7e95-46c6-9ad9-9c41351f0a31">
                 <input type="hidden" name="email" value="info@eurmsa.com">
-                <input type="hidden" name="subject" value="طلب حجز مساحة – معرض دبي العقاري">
+                <input type="hidden" name="subject" value="Booth Registration – Dubai Real Estate Expo">
                 <input type="hidden" name="from_name" value="EURM Website - Expo Registration">
                 <input type="checkbox" name="botcheck" style="display:none;">
 
-                <!-- معلومات الشركة -->
-                <h3 class="form-section-title">معلومات الشركة</h3>
+                <!-- Company Information -->
+                <h3 class="form-section-title">Company Information</h3>
                 
                 <div class="grid-2">
                     <div class="form-group">
-                        <label for="company_name">اسم الشركة <span style="color: #f97316;">*</span></label>
+                        <label for="company_name">Company Name <span style="color: #f97316;">*</span></label>
                         <input type="text" id="company_name" name="company_name" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="industry">معلومات المشاريع <span style="color: #f97316;">*</span></label>
-                        <input type="text" id="industry" name="industry" placeholder="مطور – مسوّق – وسيط" required>
+                        <label for="industry">Project Information <span style="color: #f97316;">*</span></label>
+                        <input type="text" id="industry" name="industry" placeholder="Developer – Marketer – Broker" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="city">المدينة <span style="color: #f97316;">*</span></label>
+                    <label for="city">City <span style="color: #f97316;">*</span></label>
                     <input type="text" id="city" name="city" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="company_website">موقع الشركة (اختياري)</label>
+                    <label for="company_website">Company Website (Optional)</label>
                     <input type="text" id="company_website" name="company_website" placeholder="https://example.com">
                 </div>
 
-                <!-- معلومات الشخص المسؤول -->
-                <h3 class="form-section-title">معلومات الشخص المسؤول</h3>
+                <!-- Contact Person Information -->
+                <h3 class="form-section-title">Contact Person Information</h3>
 
                 <div class="grid-2">
                     <div class="form-group">
-                        <label for="full_name">الاسم الكامل <span style="color: #f97316;">*</span></label>
+                        <label for="full_name">Full Name <span style="color: #f97316;">*</span></label>
                         <input type="text" id="full_name" name="full_name" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="job_title">المسمى الوظيفي <span style="color: #f97316;">*</span></label>
+                        <label for="job_title">Job Title <span style="color: #f97316;">*</span></label>
                         <input type="text" id="job_title" name="job_title" required>
                     </div>
                 </div>
 
                 <div class="grid-2">
                     <div class="form-group">
-                        <label for="phone">رقم الجوال مع مفتاح الدولة <span style="color: #f97316;">*</span></label>
+                        <label for="phone">Mobile Number with Country Code <span style="color: #f97316;">*</span></label>
                         <input type="text" id="phone" name="phone" placeholder="+966XXXXXXXXX" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">البريد الإلكتروني <span style="color: #f97316;">*</span></label>
+                        <label for="email">Email Address <span style="color: #f97316;">*</span></label>
                         <input type="email" id="email" name="contact_email" required>
                     </div>
                 </div>
 
-                <!-- تفاصيل المشاركة -->
-                <h3 class="form-section-title">تفاصيل المشاركة</h3>
+                <!-- Participation Details -->
+                <h3 class="form-section-title">Participation Details</h3>
 
                 <div class="form-group">
-                    <label for="booth_size">مساحة الجناح المطلوبة</label>
+                    <label for="booth_size">Booth Size</label>
                     <input type="text" id="booth_size" name="booth_size">
                 </div>
 
                 <div class="form-group">
-                    <label for="extra_needs">الاحتياجات الإضافية</label>
+                    <label for="extra_needs">Extra Needs</label>
                     <select id="extra_needs" name="extra_needs" multiple size="4">
-                        <option value="تجهيز البوث">تجهيز البوث</option>
-                        <option value="موظفين">موظفين</option>
-                        <option value="شاشات">شاشات</option>
+                        <option value="Booth Setup">Booth Setup</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Screens">Screens</option>
                     </select>
-                    <small style="display: block; margin-top: 0.5rem; color: #94a3b8;">يمكنك اختيار أكثر من خيار (اضغط Ctrl للاختيار المتعدد)</small>
+                    <small style="display: block; margin-top: 0.5rem; color: #94a3b8;">You can select multiple options (Hold Ctrl for multiple selection)</small>
                 </div>
 
                 <div class="form-group">
-                    <label for="projects_overview">نبذة عن المشاريع التي سيتم عرضها</label>
-                    <textarea id="projects_overview" name="projects_overview" placeholder="نوع المشاريع / الفئات السعرية / المدن داخل السعودية…"></textarea>
+                    <label for="projects_overview">Projects Overview</label>
+                    <textarea id="projects_overview" name="projects_overview" placeholder="Type of projects / Price ranges / Cities within Saudi Arabia…"></textarea>
                 </div>
 
-                <!-- ملف المشاريع -->
-                <h3 class="form-section-title">ملف المشاريع (اختياري)</h3>
+                <!-- Project File -->
+                <h3 class="form-section-title">Project File (Optional)</h3>
 
                 <div class="form-group">
-                    <label for="project_file">رفع ملف المشاريع (PDF اختياري)</label>
+                    <label for="project_file">Upload Project File (Optional PDF)</label>
                     <input type="file" id="project_file" name="project_file" accept="application/pdf">
                 </div>
 
-                <!-- زر الإرسال -->
+                <!-- Submit Button -->
                 <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">
-                    حفظ الملف
+                    Save File
                 </button>
             </form>
         </div>
@@ -272,7 +276,7 @@
     <div class="container">
         © <span id="year"></span> EURM – Elite Unity Real Marketing | 
         <a href="mailto:info@eurmsa.com">info@eurmsa.com</a> | 
-        <a href="https://x.com/eurm_sa" target="_blank" rel="noopener noreferrer" title="تابعنا على X">
+        <a href="https://x.com/eurm_sa" target="_blank" rel="noopener noreferrer" title="Follow us on X">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
