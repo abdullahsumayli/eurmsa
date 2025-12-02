@@ -1,78 +1,331 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <title>Thank You | EURM</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="images/logo-eurm.png">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Thank You – EURM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="images/logo-eurm.png">
+  <meta name="description"
+        content="Thank you for reaching out to EURM. We'll get back to you soon." />
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --bg-soft: #ffffff;
+      --border: #e5e7eb;
+      --navy: #0f172a;
+      --navy-soft: #111827;
+      --primary: #f97316;
+      --primary-soft: rgba(249, 115, 22, 0.08);
+      --primary-border: rgba(249, 115, 22, 0.4);
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.08);
+      --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --max-width: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #e5e7eb 0, #f3f4f6 40%, #e5e7eb 100%);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px 18px 50px;
+    }
+
+    /* NAVBAR */
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 4px 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 150deg,
+        #f97316,
+        #facc15,
+        #0ea5e9,
+        #6366f1,
+        #f97316
+      );
+      padding: 2px;
+      box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.5);
+    }
+
+    .brand-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy-soft);
+    }
+
+    .brand-tag {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy-soft);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #f97316, #facc15);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-small {
+      border-radius: 999px;
+      padding: 7px 14px;
+      border: 1px solid var(--primary-border);
+      background: #ffffff;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-small span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    footer {
+      padding-top: 16px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-top: 1px solid #d1d5db;
+      margin-top: 26px;
+    }
+
+    footer span:last-child {
+      text-align: right;
+    }
+
+    /* THANK YOU SECTION */
+
+    .thanks-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+      padding: 40px 4px;
+    }
+
+    .thanks-card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .check-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
+    }
+
+    .check-icon::before {
+      content: "✓";
+      font-size: 2.4rem;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .thanks-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .thanks-message {
+      font-size: 0.95rem;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      color: #ffffff;
+      padding: 11px 26px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(249, 115, 22, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 8px 24px rgba(249, 115, 22, 0.45);
+      transform: translateY(-1px);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .thanks-card {
+        padding: 32px 24px;
+      }
+
+      .thanks-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <div class="container navbar">
-        <div class="logo">
-            <img src="images/logo-eurm.png" alt="EURM Logo" class="logo-img">
-            <div class="logo-text">
-                <span>Elite Unity Real Marketing</span>
-            </div>
+  <div class="page">
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="brand">
+        <div class="brand-mark">
+          <div class="brand-inner">EU</div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="expo-registration.html" class="nav-cta">Book Exhibition Space</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <section class="hero" style="padding: 6rem 1rem; text-align: center; background: radial-gradient(circle at 50% 0, rgba(249, 115, 22, 0.15), transparent 70%), #020617;">
-        <div class="container">
-            <div class="thankyou-card">
-                <h1>✓ Thank You for Reaching Out to EURM</h1>
-                <p>Your message has been received successfully. A member of our team will contact you shortly to discuss your international real estate needs.</p>
-                <p>We appreciate your trust and are committed to delivering a professional service experience tailored to global investors and developers.</p>
-                <a href="index.html" class="btn btn-primary">Back to Home</a>
-            </div>
+        <div class="brand-text">
+          <span class="brand-name">EURM</span>
+          <span class="brand-tag">Elite Unity Real Marketing</span>
         </div>
-    </section>
-</main>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="expo-registration.html" class="btn-small">
+          <span class="dot"></span>
+          Book Exhibition Space
+        </a>
+      </div>
+    </header>
 
-<footer>
-    <div class="container footer">
-        <p>© EURM - Elite Unity Real Marketing. All rights reserved. | 
-        <a href="mailto:info@eurmsa.com">info@eurmsa.com</a> | 
-        <a href="https://x.com/eurm_sa" target="_blank" rel="noopener noreferrer" title="Follow us on X">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-        </a></p>
-    </div>
-</footer>
+    <!-- THANK YOU CONTENT -->
+    <main class="thanks-container">
+      <div class="thanks-card">
+        <div class="check-icon"></div>
+        <h1 class="thanks-title">Thank You for Reaching Out to EURM</h1>
+        <p class="thanks-message">
+          We've received your message and appreciate your interest in our services. 
+          Our team will review your inquiry and get back to you within 24 hours.
+        </p>
+        <a href="index.html" class="btn-primary">Back to Home</a>
+      </div>
+    </main>
 
-<script src="js/theme.js"></script>
-<script src="js/header.js"></script>
+    <!-- FOOTER -->
+    <footer>
+      <span>© EURM – Elite Unity Real Marketing. All rights reserved.</span>
+      <span>International real estate marketing partner.</span>
+    </footer>
+  </div>
 </body>
 </html>
