@@ -248,6 +248,28 @@
       line-height: 1.6;
     }
 
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .about-card .step-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--navy-soft);
+    }
+
     /* RESPONSIVE */
 
     @media (max-width: 900px) {
@@ -291,39 +313,43 @@
     <!-- ABOUT CONTENT -->
     <main class="about-page">
       <section class="about-hero">
-        <div class="section-label">Who We Are</div>
-        <h1 class="about-title">About Us</h1>
+        <div class="section-label">How We Work</div>
+        <h1 class="about-title">Our Process</h1>
         <p class="about-subtitle">
-          We believe in the power of strategic partnerships and real opportunities
+          Four strategic steps to maximise your global reach and attract qualified investment capital
         </p>
       </section>
 
       <div class="about-grid">
         <article class="about-card">
-          <h3>Our Mission</h3>
+          <div class="step-number">01</div>
+          <h3 class="step-title">Strategic Discovery</h3>
           <p>
-            Empower Saudi developers to reach new global markets and build strong investment partnerships through strategic exhibitions, targeted campaigns, and direct investor engagement.
+            We start by understanding each client's portfolio, target markets, and investment goals to create a tailored approach.
           </p>
         </article>
 
         <article class="about-card">
-          <h3>Our Vision</h3>
+          <div class="step-number">02</div>
+          <h3 class="step-title">Market Positioning</h3>
           <p>
-            To be the leading bridge between Saudi real estate excellence and international investment capital, positioning our clients at the forefront of global property markets.
+            EURM selects the right international exhibitions and designs focused marketing campaigns aligned with your objectives.
           </p>
         </article>
 
         <article class="about-card">
-          <h3>Our Approach</h3>
+          <div class="step-number">03</div>
+          <h3 class="step-title">Investor Pipeline Development</h3>
           <p>
-            We combine deep knowledge of real estate projects, investor expectations, and global exhibition platforms to position our clients in front of serious buyers and institutional investors.
+            We build and manage a targeted pipeline of qualified international investors matched to your projects.
           </p>
         </article>
 
         <article class="about-card">
-          <h3>Our Commitment</h3>
+          <div class="step-number">04</div>
+          <h3 class="step-title">Execution & Follow-Through</h3>
           <p>
-            Acting as a strategic partner rather than a generic service provider, EURM manages the full journey from visibility and lead generation to investor engagement and deal support.
+            We coordinate logistics, messaging, and follow-up to ensure every activity delivers qualified leads and measurable investment outcomes.
           </p>
         </article>
       </div>
